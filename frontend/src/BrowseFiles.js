@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 
-export default function BrowseFiles() {
+export default function BrowseFiles({ triggerGetFiles }) {
     const [files, setFiles] = useState([]);
     const [triggerEffect, setTriggerEffect] = useState(false);
 
@@ -22,7 +22,12 @@ export default function BrowseFiles() {
 
                 setFiles(files.map(obj => {
                     return (
-                        <p onClick={() => deleteFile(obj.name)}>{obj.name}</p>
+                        <div className="file--row">
+                            <p>{obj.name}</p>
+                            <span className="material-symbols-outlined" onClick={() => deleteFile(obj.name)}>
+                                delete
+                            </span>
+                        </div>
                     )
                 }));
             } catch (error) {
@@ -31,13 +36,13 @@ export default function BrowseFiles() {
         }
 
         getAllFiles();
-    }, [triggerEffect])
+    }, [triggerEffect, triggerGetFiles])
 
 
     return (
-        <div>  
-            <p>All Files:</p> 
-            <div>
+        <div className="browse-files--container">  
+            <h1>All Files:</h1> 
+            <div className="files--container">
                 {files}
             </div>
         </div>
