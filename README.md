@@ -16,8 +16,6 @@
   - [8. Deploy Backend to EC2](#8-deploy-backend-to-ec2)
   - [9. Install PM2 to Keep Backend Running](#9-install-pm2-to-keep-backend-running)
   - [10. Automate the Frontend Building](#10-automate-the-frontend-building)
-- [Best Practices](#best-practices)
-- [Troubleshooting](#troubleshooting)
 - [Conclusion](#conclusion)
 
 ## Project Overview
