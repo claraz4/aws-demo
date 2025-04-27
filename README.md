@@ -276,7 +276,7 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
     - name: Deploy to AWS S3
-      run: aws s3 sync build/ s3://claras-personal-portfolio --delete
+      run: aws s3 sync build/ s3://your-repo-name --delete
 ```
 
 You will need to upload all the necessary secrets to your GitHub Actions.
